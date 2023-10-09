@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
+    public Animator animator;
+
     private float horizontal;
     private float speed = 8f;
     private float jumpingPower = 16f;
@@ -17,15 +19,20 @@ public class playerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
     [SerializeField] private Transform fallDetector;
-
+    private float doubleJumpingPower = 12f;
     void Start()
     {
         respawnPoint = transform.position;
     }
     // Update is called once per frame
+  
     void Update()
     {
+                
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
+        
         horizontal = Input.GetAxisRaw("Horizontal");
+        
 
         if (IsGrounded() && !Input.GetButton("Jump"))
         {
@@ -34,12 +41,17 @@ public class playerMovement : MonoBehaviour
 
         if(Input.GetButtonDown("Jump"))
         {
+            animator.SetBool("IsJumping", true);
+            
             if (IsGrounded() || doubleJump)
+            
             {
-                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+                rb.velocity = new Vector2(rb.velocity.x, doubleJump ? doubleJumpingPower : jumpingPower);
 
                 doubleJump = !doubleJump;
             }
+            
+            
         }
 
         if(Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
@@ -48,9 +60,14 @@ public class playerMovement : MonoBehaviour
         }
         
         Flip();
-    }
+        }
+    
 
-    private void FixedUpdate()
+public void OnLanding()
+        {
+            animator.SetBool("IsJumping", false);
+        }
+    public void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
