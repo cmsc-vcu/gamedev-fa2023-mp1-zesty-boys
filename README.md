@@ -1,22 +1,18 @@
 # gamedev-fa2023-mp1
 CMSC391/COAR463 Game Development - Minor Project 1
 
-Lemon Boy's Adventure!
-A sprite can named Lemon Boy has to traverse through the wilds
-to collect lemons and reach the glowing rock. Along the way he
-must avoid the grabby hands and dangerous spikes that lurk through the night. 
+Great job on creating your own copy of the minor project 1 scaffold!
 
-Left arrow = move left
-Rght arrow = move right
-Up arrow = climb
-Space = jump
-Double space = double jump
+Be sure to review the resources on the Canvas site Week 6:
 
-One level game made in Unity with start and end tile cards.
-Assests used:
-  Cainos village props
-  PixelSky background
+<https://virginiacommonwealth.instructure.com/courses/86151/modules>
 
-Demo: https://play.unity.com/mg/other/webgl-builds-372814
+To learn more about writing good README.md files, see:
 
-Made by: Esther Yang & Adrienne Salkey
+<https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/>
+
+This is a scaffold project. I’ll be providing scaffolds throughout the
+semester to get you working faster, and to make grading much easier for
+the TA team.
+
+Good luck!
