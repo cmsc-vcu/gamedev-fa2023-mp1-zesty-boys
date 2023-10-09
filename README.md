@@ -11,7 +11,7 @@ must avoid the grabby hands and dangerous spikes that lurk through the night.
 
 Left arrow = move left
 
-Rght arrow = move right
+Right arrow = move right
 
 Up arrow = climb
 
@@ -20,7 +20,7 @@ Space = jump
 Double space = double jump
 
 
-One level game made in Unity with start and end tile cards.
+One level game made in Unity with start and end title cards.
 
 Assests used:
 
